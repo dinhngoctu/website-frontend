@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Editor} from 'ngx-editor';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,5 @@ export class AppComponent {
   isCollapsed2 = true;
   isCollapsedCate = false;
   isReverseArrow = false;
+  editor = new Editor();
 }
