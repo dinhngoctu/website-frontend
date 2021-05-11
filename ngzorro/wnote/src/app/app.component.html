@@ -91,8 +91,8 @@
 <!--      </div>-->
 <!--    </nz-header>-->
     <nz-content class="ccnz-content">
-      <div nz-row class="full-height">
-        <div nz-col nzSpan="17">
+      <div nz-row class="full-height fex-content-between">
+        <div nz-col nzSpan="18">
           <div class="inner-content">
             <router-outlet></router-outlet>
             <div nz-row class="row-input-center">
@@ -110,7 +110,19 @@
 <!--            </div>-->
           </div>
         </div>
-        <div nz-col [nzSpan]="7" class="ccard-shadow"></div>
+        <div nz-col [nzSpan]="6" [nzXXl]="0" class="ccard-shadow extent-info-nav">
+          <div nz-row style="padding: 20px" class="timer-widget">
+            <div nz-row style="display: block">
+              <span style="font-size: 20px">11/05/2021</span>
+            </div>
+            <div nz-row>
+              <span>04:33 PM</span>
+            </div>
+            <div nz-row>
+              <span>Thứ Hai</span>
+            </div>
+          </div>
+        </div>
       </div>
     </nz-content>
   </nz-layout>

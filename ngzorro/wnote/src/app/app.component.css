@@ -118,3 +118,9 @@ nz-content {
 .full-height{
   height: 100%;
 }
+.fex-content-between{
+  justify-content: space-between;
+}
+.extent-info-nav{
+  max-width: 270px;
+}
