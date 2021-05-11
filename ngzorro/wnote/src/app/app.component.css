@@ -85,7 +85,7 @@ nz-content {
 }
 
 .inner-content {
-  padding: 24px;
+  padding-top: 24px;
   /*background: #fff;*/
   height: 100%;
 }
@@ -93,15 +93,16 @@ nz-content {
   /*border-radius: 15px;*/
   min-height: 20vh;
   background: white;
+  /*margin-left: 24px;*/
+  /*margin-right: 24px;*/
   /*margin-left: 60px;*/
   /*min-width: 55em;*/
-  min-width: 70em;
   /*margin-right: 50px;*/
   padding-bottom: 100px;
 }
 .row-input-center{
   display: flex;
-  justify-content: center;
+  justify-content: left;
 }
 .ccard-shadow{
   /*width: 250px;*/
