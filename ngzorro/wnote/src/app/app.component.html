@@ -92,32 +92,28 @@
 <!--    </nz-header>-->
     <nz-content class="ccnz-content">
       <div nz-row class="full-height fex-content-between">
-        <div nz-col nzSpan="18">
+        <div class="col-9">
           <div class="inner-content">
             <router-outlet></router-outlet>
             <div nz-row class="row-input-center">
               <!--          <div nz-col [nzSpan]="18" class="ccard-shadow input-content-center"></div>-->
               <div nz-col [nzSpan]="18" class="input-content-center">
-                <div style="padding: 10px" class="editor">
-                  <ngx-editor [editor]="editor"> </ngx-editor>
-                  <ngx-editor-floating-menu [editor]="editor">
-                    <ngx-editor-menu [editor]="editor"></ngx-editor-menu>
-                  </ngx-editor-floating-menu>
-                </div>
+
+<!--                khung nhap du lieu text-->
+
+<!--                <div style="padding: 10px" class="editor">-->
+<!--                  <ngx-editor [editor]="editor"> </ngx-editor>-->
+<!--                  <ngx-editor-floating-menu [editor]="editor">-->
+<!--                    <ngx-editor-menu [editor]="editor"></ngx-editor-menu>-->
+<!--                  </ngx-editor-floating-menu>-->
+<!--                </div>-->
+<!--               end khung nhap du lieu text-->
+
               </div>
             </div>
-
-<!--            <div nz-col [nzSpan]="6" style="color: #EBEBEB">-->
-<!--              ...-->
-<!--              <br/>-->
-<!--              Really-->
-<!--              <br/>...<br/>...<br/>...<br/>-->
-<!--              long-->
-<!--              content-->
-<!--            </div>-->
           </div>
         </div>
-        <div nz-col [nzSpan]="6" [nzXXl]="0" class="ccard-shadow extent-info-nav">
+        <div class="col-3 ccard-shadow extent-info-nav">
           <div nz-row style="padding: 20px" class="timer-widget">
             <div nz-row style="display: block">
               <span style="font-size: 20px">11/05/2021</span>
