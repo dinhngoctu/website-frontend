@@ -162,3 +162,6 @@ nz-content {
   .col-s-11 {width: 91.66%;}
   .col-s-12 {width: 100%;}
 }
+.bg-main-color{
+  background-color: #edf4f9;
+}
