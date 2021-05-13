@@ -1,6 +1,4 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import EditorJS from '@editorjs/editorjs';
-import Header from '@editorjs/header';
 import {Editor} from 'ngx-editor';
 
 @Component({
