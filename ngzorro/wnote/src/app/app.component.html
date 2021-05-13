@@ -95,19 +95,18 @@
       <div nz-row class="full-height fex-content-between">
         <div class="col-9">
           <div class="inner-content">
+            <div nz-row class="row-header" style="height: 60px;display: flex">
+              <span class="header-trigger" (click)="isCollapsed2 = !isCollapsed2">
+                <i class="trigger" nz-icon [nzType]="isCollapsed2 ? 'menu-unfold' : 'menu-fold'"></i>
+              </span>
+            </div>
             <div nz-row class="row-input-center">
               <!--          <div nz-col [nzSpan]="18" class="ccard-shadow input-content-center"></div>-->
               <div nz-col [nzSpan]="18" class="input-content-center">
 
 <!--                khung nhap du lieu text-->
-                <app-quill-input></app-quill-input>
+              <app-quill-input></app-quill-input>
 
-                <div style="padding: 10px" class="editor">
-                  <ngx-editor [editor]="editor"> </ngx-editor>
-                  <ngx-editor-floating-menu [editor]="editor">
-                    <ngx-editor-menu [editor]="editor"></ngx-editor-menu>
-                  </ngx-editor-floating-menu>
-                </div>
 <!--                <div id="editorjs"></div>-->
 <!--               end khung nhap du lieu text-->
 

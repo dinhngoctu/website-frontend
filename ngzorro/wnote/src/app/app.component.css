@@ -29,7 +29,7 @@ nz-sider {
   font-size: 20px;
   cursor: pointer;
   transition: all .3s,padding 0s;
-  display: flex;
+  /*display: flex;*/
 }
 
 .trigger:hover {
@@ -127,7 +127,7 @@ nz-content {
 
 [class*="col-"] {
   float: left;
-  padding: 15px;
+  /*padding: 15px;*/
   width: 100%;
 }
 
