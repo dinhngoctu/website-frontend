@@ -14,9 +14,12 @@ import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzGridModule } from 'ng-zorro-antd/grid';
-import {NgxEditorModule} from 'ngx-editor';
 import { QuillInputComponent } from './editor/quill-input/quill-input.component';
 import {QuillModule} from 'ngx-quill';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import {NzEmptyModule} from 'ng-zorro-antd/empty';
+import {NzTimelineModule} from 'ng-zorro-antd/timeline';
+import {NzStepsModule} from 'ng-zorro-antd/steps';
 
 registerLocaleData(en);
 
@@ -34,12 +37,16 @@ registerLocaleData(en);
     IconsProviderModule,
     NzLayoutModule,
     NzI18nModule,
+    NzEmptyModule,
     NzGridModule,
+    NzDividerModule,
     NzMenuModule,
+    NzTimelineModule,
+    NzStepsModule,
     QuillModule
       .forRoot({
         theme: 'bubble',
-        placeholder: 'input here...',
+        placeholder: 'input here... ',
       modules: {
         syntax: true,
         toolbar: [
@@ -66,42 +73,6 @@ registerLocaleData(en);
           ['link', 'image', 'video']                         // link and image, video
         ]
       }
-    })
-    ,
-    NgxEditorModule.forRoot({
-      locals: {
-        // menu
-        bold: 'Bold',
-        italic: 'Italic',
-        code: 'Code',
-        underline: 'Underline',
-        strike: 'Strike',
-        blockquote: 'Blockquote',
-        bullet_list: 'Bullet List',
-        ordered_list: 'Ordered List',
-        heading: 'Heading',
-        h1: 'Header 1',
-        h2: 'Header 2',
-        h3: 'Header 3',
-        h4: 'Header 4',
-        h5: 'Header 5',
-        h6: 'Header 6',
-        align_left: 'Left Align',
-        align_center: 'Center Align',
-        align_right: 'Right Align',
-        align_justify: 'Justify',
-        text_color: 'Text Color',
-        background_color: 'Background Color',
-
-        // pupups, forms, others...
-        url: 'URL',
-        text: 'Text',
-        openInNewTab: 'Open in new tab',
-        insert: 'Insert',
-        altText: 'Alt Text',
-        title: 'Title',
-        remove: 'Remove',
-      },
     })
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],

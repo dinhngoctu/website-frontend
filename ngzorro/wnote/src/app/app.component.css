@@ -130,7 +130,18 @@ nz-content {
   /*padding: 15px;*/
   width: 100%;
 }
-
+[class*="col-"] {
+  float: left;
+  /*padding: 15px;*/
+  width: 100%;
+}
+.row-header {
+  justify-content: flex-end;
+}
+.ant-timeline-item-content {
+  /*sửa trong lib*/
+  color: darkgray;
+}
 @media only screen and (min-width: 768px) {
   /* For desktop: */
   .col-1 {width: 8.33%;}
@@ -164,4 +175,9 @@ nz-content {
 }
 .bg-main-color{
   background-color: #edf4f9;
+}
+.ant-divider-horizontal {
+  margin-bottom: 10px;
+  background-color: lightgray;
+  min-width: 80%;
 }

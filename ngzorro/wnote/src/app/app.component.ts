@@ -1,5 +1,4 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Editor} from 'ngx-editor';
 
 @Component({
   selector: 'app-root',
@@ -13,17 +12,8 @@ export class AppComponent implements OnInit, OnDestroy{
   }
   isCollapsed = true;
   isCollapsed2 = true;
+  switch3 = false;
   isCollapsedCate = false;
   isReverseArrow = false;
-  editor = new Editor();
-  // editor = new EditorJS({
-  //   holderId: 'editorjs',
-  //   tools: {
-  //     header: {
-  //       class: Header,
-  //       inlineToolbar: true
-  //     }
-  //   }
-  // });
 
 }

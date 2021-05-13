@@ -10,6 +10,9 @@ export class QuillInputComponent implements OnInit {
   objectFormat = [
     { insert: '\n', attributes: { align: 'center' }  }
   ];
+  defaultContent = [
+    { insert: '\n', attributes: { align: 'center' }  }
+  ];
 
   options = {
     debug: 'info',
