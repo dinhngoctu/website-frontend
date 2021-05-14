@@ -5,10 +5,10 @@
             [(nzCollapsed)]="isCollapsed"
             [nzTrigger]="null">
     <div class="sidebar-logo" (click)="isCollapsed = !isCollapsed">
-<!--      <a href="https://ng.ant.design/" target="_blank">-->
-        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
-        <h1>Ant Design Of Angular</h1>
-<!--      </a>-->
+      <!--      <a href="https://ng.ant.design/" target="_blank">-->
+      <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
+      <h1>Ant Design Of Angular</h1>
+      <!--      </a>-->
     </div>
     <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
       <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
@@ -34,8 +34,9 @@
     </ul>
 
   </nz-sider>
-  <nz-sider class="menu-sidebar" style="background-color: #161F2D;" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed2" [nzTrigger]="null">
-    <div class="sidebar-logo" style="background-color: #161F2D" >
+  <nz-sider class="menu-sidebar" style="background-color: #161F2D;" nzCollapsible nzWidth="256px" nzBreakpoint="md"
+            [(nzCollapsed)]="isCollapsed2" [nzTrigger]="null">
+    <div class="sidebar-logo" style="background-color: #161F2D">
       <span (click)="isCollapsed2 = !isCollapsed2">
             <i style="color: #EBEBEB;" class="trigger"
                nz-icon
@@ -43,19 +44,19 @@
             ></i>
         <h1 style="color: #EBEBEB;">Ant Design Of Angular</h1>
         </span>
-<!--      <a href="https://ng.ant.design/" target="_blank">-->
-<!--        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">-->
-<!--        <h1>Ant Design Of Angular</h1>-->
-<!--      </a>-->
+      <!--      <a href="https://ng.ant.design/" target="_blank">-->
+      <!--        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">-->
+      <!--        <h1>Ant Design Of Angular</h1>-->
+      <!--      </a>-->
     </div>
     <div *ngIf="!isCollapsed2">
-      <input style="background-color: #161F2D;border: #f0f2f5;color: #EBEBEB" type="text" placeholder="search text..." />
+      <input style="background-color: #161F2D;border: #f0f2f5;color: #EBEBEB" type="text" placeholder="search text..."/>
     </div>
     <div>
       new note
     </div>
     <ul nz-menu nzTheme="dark" nzMode="inline" style="background-color: #161F2D;" [nzInlineCollapsed]="isCollapsed2">
-<!--    <ul nz-menu nzTheme="light" nzMode="inline" [nzInlineCollapsed]="isCollapsed2">-->
+      <!--    <ul nz-menu nzTheme="light" nzMode="inline" [nzInlineCollapsed]="isCollapsed2">-->
       <li nz-menu-item nzMatchRouter>
         <a routerLink="/welcome">Welcome</a>
       </li>
@@ -81,23 +82,23 @@
       </li>
     </ul>
   </nz-sider>
-<!--  <nz-layout  style="background-image: linear-gradient(to right, #00FFA9 , #0D4DFF);">-->
+  <!--  <nz-layout  style="background-image: linear-gradient(to right, #00FFA9 , #0D4DFF);">-->
   <nz-layout class="bg-main-color">
-<!--    <nz-header>-->
-<!--      <div class="app-header">-->
-<!--        <span class="header-trigger" (click)="isCollapsed2 = !isCollapsed2">-->
-<!--            <i class="trigger"-->
-<!--               nz-icon-->
-<!--               [nzType]="isCollapsed2 ? 'menu-unfold' : 'menu-fold'"-->
-<!--            ></i>-->
-<!--        </span>-->
-<!--      </div>-->
-<!--    </nz-header>-->
-    <nz-content class="ccnz-content">
-      <router-outlet></router-outlet>
-      <div nz-row class="full-height fex-content-between">
-        <div class="col-9">
-          <div class="inner-content">
+    <!--    <nz-header>-->
+    <!--      <div class="app-header">-->
+    <!--        <span class="header-trigger" (click)="isCollapsed2 = !isCollapsed2">-->
+    <!--            <i class="trigger"-->
+    <!--               nz-icon-->
+    <!--               [nzType]="isCollapsed2 ? 'menu-unfold' : 'menu-fold'"-->
+    <!--            ></i>-->
+    <!--        </span>-->
+    <!--      </div>-->
+    <!--    </nz-header>-->
+    <nz-content class="cc-nz-content">
+      <!--      <router-outlet></router-outlet>-->
+      <div nz-row class="full-height">
+        <div class="col-9" style="position: relative;overflow: auto">
+          <div id="div-content-center" class="col-12 wrapper-overflow">
             <div nz-row class="row-header" style="height: 60px;display: flex">
               <span class="header-trigger" (click)="switch3 = !switch3">
                 <i class="trigger" nz-icon [nzType]="switch3 ? 'menu-unfold' : 'menu-fold'"></i>
@@ -107,85 +108,89 @@
               <!--          <div nz-col [nzSpan]="18" class="ccard-shadow input-content-center"></div>-->
               <div nz-col [nzSpan]="18" class="input-content-center">
 
-<!--                khung nhap du lieu text-->
-              <app-quill-input></app-quill-input>
+                <!--                khung nhap du lieu text-->
+                <app-quill-input></app-quill-input>
 
 
-<!--                <div id="editorjs"></div>-->
-<!--               end khung nhap du lieu text-->
+                <!--                <div id="editorjs"></div>-->
+                <!--               end khung nhap du lieu text-->
 
               </div>
               <div style="color: lightgray;padding-top: 30px;">
-                '\nx/n thoat(them moi note default),m/n chat,t/n tra tu,phan loai  note tu dong'</div>
+                '\nx/n thoat(them moi note default),m/n chat,t/n tra tu,phan loai note tu dong'
+              </div>
             </div>
           </div>
         </div>
         <div *ngIf="!switch3" class="col-3 ccard-shadow extent-info-nav">
-          <div nz-row style="padding: 20px" class="timer-widget">
-            <div nz-row style="display: block">
-              <span style="font-size: 20px">11/05/2021</span>
+          <div class="wrapper-overflow">
+            <div nz-row style="padding: 20px" class="timer-widget">
+              <div nz-row style="display: block">
+                <span style="font-size: 20px">11/05/2021</span>
+              </div>
+              <div nz-row>
+                <span>04:33 PM</span>
+              </div>
+              <div nz-row>
+                <span>Thứ Hai</span>
+              </div>
             </div>
-            <div nz-row>
-              <span>04:33 PM</span>
+            <div class="divider-left" style="padding: 0px 10px ">
+              <nz-divider></nz-divider>
+              <span>Đặt lịch</span>
+              <nz-empty
+                nzNotFoundImage="https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg"
+                [nzNotFoundContent]="contentTpl"
+                [nzNotFoundFooter]="footerTpl"
+              >
+                <ng-template #contentTpl>
+                  <span> Customize <a href="#API">Description</a> </span>
+                </ng-template>
+                <ng-template #footerTpl>
+                  <button nz-button nzType="primary" (click)="onClick()">Create Now</button>
+                </ng-template>
+              </nz-empty>
             </div>
-            <div nz-row>
-              <span>Thứ Hai</span>
+            <div class="divider-left" style="padding: 0px 10px ">
+              <nz-divider></nz-divider>
+              <span>Notifycation</span>
+              <nz-steps [nzCurrent]="0" nzDirection="vertical">
+                <nz-step nzTitle="Finished" nzDescription="This is a description."></nz-step>
+                <nz-step nzTitle="In Progress" nzDescription="This is a description."></nz-step>
+                <nz-step nzTitle="Waiting" nzDescription="This is a description."></nz-step>
+              </nz-steps>
+            </div>
+            <div class="divider-left" style="padding: 0px 10px ">
+              <nz-divider></nz-divider>
+              <span>Near Task</span>
+              <div style="overflow: auto">
+                <nz-timeline>
+                  <nz-timeline-item nzColor="green">Các link là route</nz-timeline-item>
+                  <nz-timeline-item nzColor="green">Solve initial network problems</nz-timeline-item>
+                  <nz-timeline-item nzColor="red">
+                    <p>các bài viết có link kèm uuid động</p>
+                    <p>Bấm vô sẽ chuyển sang component</p>
+                    <p>get data theo uuid động ở component</p>
+                  </nz-timeline-item>
+                  <nz-timeline-item>
+                    <p>Technical testing 1</p>
+                    <p>Technical testing 2</p>
+                    <p>Technical testing 3 2015-09-01</p>
+                  </nz-timeline-item>
+                  <nz-timeline-item nzColor="gray">
+                    <p>Technical testing 1</p>
+                    <p>Technical testing 2</p>
+                    <p>Technical testing 3 2015-09-01</p>
+                  </nz-timeline-item>
+                  <nz-timeline-item nzColor="gray">
+                    <p>Technical testing 1</p>
+                    <p>Technical testing 2</p>
+                    <p>Technical testing 3 2015-09-01</p>
+                  </nz-timeline-item>
+                </nz-timeline>
+              </div>
             </div>
           </div>
-          <div class="divider-left" style="padding: 0px 10px ">
-            <nz-divider></nz-divider>
-            <span>Đặt lịch</span>
-            <nz-empty
-              nzNotFoundImage="https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg"
-              [nzNotFoundContent]="contentTpl"
-              [nzNotFoundFooter]="footerTpl"
-            >
-              <ng-template #contentTpl>
-                <span> Customize <a href="#API">Description</a> </span>
-              </ng-template>
-              <ng-template #footerTpl>
-                <button nz-button nzType="primary" (click)="onClick()">Create Now</button>
-              </ng-template>
-            </nz-empty>
-          </div>
-          <div class="divider-left" style="padding: 0px 10px ">
-            <nz-divider></nz-divider>
-            <span>Notifycation</span>
-            <nz-steps [nzCurrent]="0" nzDirection="vertical">
-              <nz-step nzTitle="Finished" nzDescription="This is a description."></nz-step>
-              <nz-step nzTitle="In Progress" nzDescription="This is a description."></nz-step>
-              <nz-step nzTitle="Waiting" nzDescription="This is a description."></nz-step>
-            </nz-steps>
-          </div>
-          <div class="divider-left" style="padding: 0px 10px ">
-            <nz-divider></nz-divider>
-            <span>Near Task</span>
-            <nz-timeline>
-              <nz-timeline-item nzColor="green">Các link là route </nz-timeline-item>
-              <nz-timeline-item nzColor="green">Solve initial network problems</nz-timeline-item>
-              <nz-timeline-item nzColor="red">
-                <p>các bài viết có link kèm uuid động</p>
-                <p>Bấm vô sẽ chuyển sang component</p>
-                <p>get data theo uuid động ở component</p>
-              </nz-timeline-item>
-              <nz-timeline-item>
-                <p>Technical testing 1</p>
-                <p>Technical testing 2</p>
-                <p>Technical testing 3 2015-09-01</p>
-              </nz-timeline-item>
-              <nz-timeline-item nzColor="gray">
-                <p>Technical testing 1</p>
-                <p>Technical testing 2</p>
-                <p>Technical testing 3 2015-09-01</p>
-              </nz-timeline-item>
-              <nz-timeline-item nzColor="gray">
-                <p>Technical testing 1</p>
-                <p>Technical testing 2</p>
-                <p>Technical testing 3 2015-09-01</p>
-              </nz-timeline-item>
-            </nz-timeline>
-          </div>
-
         </div>
       </div>
     </nz-content>
