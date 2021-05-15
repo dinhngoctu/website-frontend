@@ -20,6 +20,7 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import {NzEmptyModule} from 'ng-zorro-antd/empty';
 import {NzTimelineModule} from 'ng-zorro-antd/timeline';
 import {NzStepsModule} from 'ng-zorro-antd/steps';
+import {NzPopoverModule} from 'ng-zorro-antd/popover';
 
 registerLocaleData(en);
 
@@ -43,6 +44,7 @@ registerLocaleData(en);
     NzMenuModule,
     NzTimelineModule,
     NzStepsModule,
+    NzPopoverModule,
     QuillModule
       .forRoot({
         theme: 'bubble',

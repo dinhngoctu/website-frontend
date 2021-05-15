@@ -54,9 +54,10 @@
     <div>
       new note
     </div>
-    <ul nz-menu nzTheme="dark" nzMode="inline" style="background-color: #161F2D;" [nzInlineCollapsed]="isCollapsed2">
+    <ul nz-menu  ng-reflect-nz-disabled="true" ng-reflect-is-menu-inside-drop-down="true"  nzTheme="dark" nzMode="inline" style="background-color: #161F2D;" [nzInlineCollapsed]="isCollapsed2">
 <!--    <ul nz-menu nzTheme="light" nzMode="inline" [nzInlineCollapsed]="isCollapsed2">-->
-      <li nz-menu-item nzMatchRouter>
+      <li nz-menu-item nzMatchRouter >
+        <i nz-icon [nzType]="'plus'"></i>
         <a routerLink="/welcome">Welcome</a>
       </li>
       <li nz-submenu nzOpen nzTitle="Top Note (rank)" nzIcon="dashboard">
@@ -75,12 +76,22 @@
       <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
         <ul>
           <li nz-menu-item nzMatchRouter>
-            <a>Basic Form</a>
           </li>
         </ul>
       </li>
+      <div style="display:flex;justify-content: center">
+        <span class="header-trigger" (click)="switch3 = !switch3">
+                <i class="trigger" nz-icon [nzType]="'plus'"></i>
+              </span>
+      </div>
     </ul>
+    <ng-template #contentTemplate>
+      <div>
+        <input type="text">
+      </div>
+    </ng-template>
   </nz-sider>
+
 <!--  <nz-layout  style="background-image: linear-gradient(to right, #00FFA9 , #0D4DFF);">-->
   <nz-layout class="bg-main-color">
 <!--    <nz-header>-->
@@ -96,10 +107,10 @@
     <nz-content class="ccnz-content">
       <router-outlet></router-outlet>
       <div nz-row class="full-height fex-content-between">
-        <div class="col-9">
+        <div id="content_center" class="col-9">
           <div class="inner-content">
             <div nz-row class="row-header" style="height: 60px;display: flex">
-              <span class="header-trigger" (click)="switch3 = !switch3">
+              <span class="header-trigger" (click)="switch3medthod()">
                 <i class="trigger" nz-icon [nzType]="switch3 ? 'menu-unfold' : 'menu-fold'"></i>
               </span>
             </div>
@@ -120,7 +131,7 @@
             </div>
           </div>
         </div>
-        <div *ngIf="!switch3" class="col-3 ccard-shadow extent-info-nav">
+        <div id="extent-info-nav" *ngIf="!switch3" class="col-3 ccard-shadow extent-info-nav">
           <div nz-row style="padding: 20px" class="timer-widget">
             <div nz-row style="display: block">
               <span style="font-size: 20px">11/05/2021</span>
