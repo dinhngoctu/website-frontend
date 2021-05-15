@@ -21,6 +21,8 @@ import {NzEmptyModule} from 'ng-zorro-antd/empty';
 import {NzTimelineModule} from 'ng-zorro-antd/timeline';
 import {NzStepsModule} from 'ng-zorro-antd/steps';
 import {NzPopoverModule} from 'ng-zorro-antd/popover';
+import {NzModalModule} from 'ng-zorro-antd/modal';
+import {NzFormModule} from 'ng-zorro-antd/form';
 
 registerLocaleData(en);
 
@@ -38,6 +40,8 @@ registerLocaleData(en);
     IconsProviderModule,
     NzLayoutModule,
     NzI18nModule,
+    NzModalModule,
+    NzFormModule,
     NzEmptyModule,
     NzGridModule,
     NzDividerModule,

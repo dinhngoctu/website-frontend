@@ -32,7 +32,7 @@
         </ul>
       </li>
     </ul>
-
+<!--    ngif các menu con bên dưới ra các component riêng -->
   </nz-sider>
   <nz-sider class="menu-sidebar" style="background-color: #161F2D;" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed2" [nzTrigger]="null">
     <div class="sidebar-logo" style="background-color: #161F2D" >
@@ -80,7 +80,7 @@
         </ul>
       </li>
       <div style="display:flex;justify-content: center">
-        <span class="header-trigger" (click)="switch3 = !switch3">
+        <span class="header-trigger" (click)="showModal()">
                 <i class="trigger" nz-icon [nzType]="'plus'"></i>
               </span>
       </div>
@@ -202,3 +202,23 @@
     </nz-content>
   </nz-layout>
 </nz-layout>
+<nz-modal
+  [(nzVisible)]="isVisible"
+  [nzContent]="modalContent"
+  [nzFooter]="modalFooter"
+  (nzOnCancel)="handleCancel()"
+>
+<!--  <ng-template #modalTitle>Custom Modal Title</ng-template>-->
+
+  <ng-template #modalContent>
+    <p>Modal Content</p>
+    <br>
+    <input placeholder="Tên nhóm mới" type="text"/>
+  </ng-template>
+  <ng-template #modalFooter>
+<!--    <button nz-button nzType="default" (click)="handleCancel()">Custom Callback</button>-->
+    <button nz-button nzType="primary" (click)="handleOk()" >Thêm</button>
+    <a href="#" class="btn red darken-4">Test</a>
+    <br>
+  </ng-template>
+</nz-modal>
