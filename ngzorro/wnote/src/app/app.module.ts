@@ -52,7 +52,7 @@ registerLocaleData(en);
     QuillModule
       .forRoot({
         theme: 'bubble',
-        placeholder: 'input here... ',
+        placeholder: '     input here... ',
       modules: {
         syntax: true,
         toolbar: [
