@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,13 +23,16 @@ import {NzStepsModule} from 'ng-zorro-antd/steps';
 import {NzPopoverModule} from 'ng-zorro-antd/popover';
 import {NzModalModule} from 'ng-zorro-antd/modal';
 import {NzFormModule} from 'ng-zorro-antd/form';
+import { NewNoteComponent } from './component/new-note/new-note.component';
 
 registerLocaleData(en);
 
 @NgModule({
+  schemas: [ NO_ERRORS_SCHEMA ],
   declarations: [
     AppComponent,
-    QuillInputComponent
+    QuillInputComponent,
+    NewNoteComponent
   ],
   imports: [
     BrowserModule,

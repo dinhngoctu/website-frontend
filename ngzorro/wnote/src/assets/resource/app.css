@@ -1,0 +1,234 @@
+:host {
+  display: flex;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+nz-sider {
+  overflow: auto;
+  height: 100%;
+  position: fixed;
+  left: 0;
+}
+
+.app-layout {
+  height: 100vh;
+}
+
+.menu-sidebar {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  box-shadow: 2px 0 6px rgba(0,21,41,.35);
+}
+
+.header-trigger {
+  height: 50px;
+  padding: 15px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all .3s,padding 0s;
+  /*display: flex;*/
+}
+
+.trigger:hover {
+  color: #1890ff;
+}
+
+.sidebar-logo {
+  position: relative;
+  height: 64px;
+  padding-left: 24px;
+  overflow: hidden;
+  line-height: 64px;
+  background: #001529;
+  transition: all .3s;
+}
+
+.sidebar-logo img {
+  display: inline-block;
+  height: 32px;
+  width: 32px;
+  vertical-align: middle;
+}
+
+.sidebar-logo h1 {
+  display: inline-block;
+  margin: 0 0 0 20px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: Avenir,Helvetica Neue,Arial,Helvetica,sans-serif;
+  vertical-align: middle;
+}
+nz-header {
+  position: fixed;
+  padding: 0;
+  width: 100%;
+  z-index: 2;
+  background-color: transparent;
+}
+
+.app-header {
+  position: relative;
+  height: 50px;
+  padding: 0;
+  /*background: #fff;*/
+  background: #EBEBEB;
+  box-shadow: 0 1px 4px rgba(0,21,41,.08);
+}
+
+nz-content {
+  margin: 60px 15px 15px 15px;
+  overflow: auto;
+  /*position: fixed;*/
+}
+
+.inner-content {
+  /*padding:24px 30px;*/
+  /*background: #fff;*/
+  height: 100%;
+}
+.input-content-center{
+  border-radius: 15px;
+  min-height: 20vh;
+  /*margin-left: 24px;*/
+  /*margin-right: 24px;*/
+  /*margin-left: 60px;*/
+  /*min-width: 55em;*/
+  /*margin-right: 50px;*/
+  padding-bottom: 100px;
+}
+.row-input-center{
+  display: flex;
+  padding: 60px 0px;
+  justify-content: center;
+}
+.ccard-shadow{
+  /*width: 250px;*/
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: white;
+  /*text-align: center;*/
+}
+.ccnz-content{
+  margin: 0px;
+}
+.full-height{
+  height: 100%;
+}
+.fex-content-between{
+  justify-content: space-between;
+}
+.extent-info-nav{
+  /*max-width: 270px;*/
+}
+
+[class*="col-"] {
+  float: left;
+  /*padding: 15px;*/
+  width: 100%;
+}
+[class*="col-"] {
+  float: left;
+  /*padding: 15px;*/
+  width: 100%;
+}
+.row-header {
+  justify-content: flex-end;
+}
+.ant-timeline-item-content {
+  /*sửa trong lib*/
+  color: darkgray;
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+.bg-main-color{
+  background-color: #edf4f9;
+}
+.ant-divider-horizontal {
+  margin-bottom: 10px;
+  background-color: lightgray;
+  min-width: 80%;
+}
+
+/*input css all page*/
+input[type="text"] {
+  width: 100%;
+  border: 1px solid #1990FF;
+  border-radius: 4px;
+  margin: 7px 0;
+  outline: none;
+  padding: 7px;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: dodgerBlue;
+  box-shadow: 0 0 8px 0 dodgerBlue;
+}
+
+.inputWithIcon input[type="text"] {
+  padding-left: 40px;
+}
+
+.inputWithIcon {
+  position: relative;
+}
+
+.inputWithIcon i {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  padding: 9px 8px;
+  color: #aaa;
+  transition: 0.3s;
+}
+
+.inputWithIcon input[type="text"]:focus + i {
+  color: dodgerBlue;
+}
+
+.inputWithIcon.inputIconBg i {
+  background-color: #aaa;
+  color: #fff;
+  padding: 9px 4px;
+  border-radius: 4px 0 0 4px;
+}
+
+.inputWithIcon.inputIconBg input[type="text"]:focus + i {
+  color: #fff;
+  background-color: dodgerBlue;
+}
+
+

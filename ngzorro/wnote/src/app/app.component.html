@@ -14,7 +14,7 @@
       <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
         <ul>
           <li nz-menu-item nzMatchRouter>
-            <a routerLink="/welcome">Welcome</a>
+            <a routerLink="/new-note">Welcome</a>
           </li>
           <li nz-menu-item nzMatchRouter>
             <a>Monitor</a>
@@ -55,7 +55,7 @@
 <!--    <ul nz-menu nzTheme="light" nzMode="inline" [nzInlineCollapsed]="isCollapsed2">-->
       <li nz-menu-item nzMatchRouter >
         <i nz-icon [nzType]="'plus'"></i>
-        <a routerLink="/welcome">Home</a>
+        <a routerLink="/new-note">Home</a>
       </li>
       <li nz-submenu nzOpen nzTitle="Top Note (rank)" nzIcon="dashboard">
         <ul>
@@ -107,139 +107,20 @@
 <!--      </div>-->
 <!--    </nz-header>-->
     <nz-content class="ccnz-content">
+
       <router-outlet></router-outlet>
-      <div nz-row class="full-height fex-content-between">
-        <div id="content_center" class="col-9">
-          <div class="inner-content">
-            <div nz-row class="row-header" style="height: 60px;display: flex">
-              <span class="header-trigger" (click)="showModal()">
-                <i class="trigger" nz-icon [nzType]="'field-time'"></i>
-              </span>
-              <span class="header-trigger" (click)="showModal()">
-                <i class="trigger" nz-icon [nzType]="'read'"></i>
-              </span>
-              <span class="header-trigger" (click)="switch3medthod()">
-                <i class="trigger" nz-icon [nzType]="switch3 ? 'menu-unfold' : 'menu-fold'"></i>
-              </span>
-            </div>
-            <div nz-row class="row-input-center">
-              <!--          <div nz-col [nzSpan]="18" class="ccard-shadow input-content-center"></div>-->
-              <div nz-col [nzSpan]="19" class="input-content-center" style="background: white;">
-<!--                khung nhap du lieu text-->
-              <app-quill-input></app-quill-input>
 
-
-<!--                <div id="editorjs"></div>-->
-<!--               end khung nhap du lieu text-->
-
-              </div>
-              <div style="color: lightgray;padding-top: 30px;">
-                '\nx/n thoat(them moi note default),m/n chat,t/n tra tu,phan loai  note tu dong'
-              </div>
-            </div>
-            <div nz-row class="row-input-center" style="margin-top: 50px;">
-              <!--          <div nz-col [nzSpan]="18" class="ccard-shadow input-content-center"></div>-->
-              <div nz-col [nzSpan]="19" class="input-content-center" style="padding: 15px">
-<!--              <div nz-col [nzSpan]="19" class="input-content-center" style="background: white;padding: 15px">-->
-                <div class="col-5" style="border-right: 1px solid lightgray;height: 180px;overflow: auto;padding-right: 10px;">
-                  <span>Near Task</span>
-                  <p></p>
-                  <nz-timeline>
-                    <nz-timeline-item nzColor="green">Các link là route </nz-timeline-item>
-                    <nz-timeline-item nzColor="green">Solve initial network problems</nz-timeline-item>
-                    <nz-timeline-item nzColor="red">
-                      <p>các bài viết có link kèm uuid động</p>
-                      <p>Bấm vô sẽ chuyển sang component</p>
-                      <p>get data theo uuid động ở component</p>
-                    </nz-timeline-item>
-                    <nz-timeline-item>
-                      <p>Technical testing 1</p>
-                    </nz-timeline-item>
-                  </nz-timeline>
-                </div>
-                <div class="col-7" style="height: 180px"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="extent-info-nav" *ngIf="!switch3" class="col-3 ccard-shadow extent-info-nav">
-          <div nz-row style="padding: 20px" class="timer-widget">
-            <div nz-row style="display: block">
-              <span style="font-size: 20px">11/05/2021</span>
-            </div>
-            <div nz-row>
-              <span>04:33 PM</span>
-            </div>
-            <div nz-row>
-              <span>Thứ Hai</span>
-            </div>
-          </div>
-          <div class="divider-left" style="padding: 0px 10px ">
-            <nz-divider></nz-divider>
-            <span>Đặt lịch</span>
-            <nz-empty
-              nzNotFoundImage="https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg"
-              [nzNotFoundContent]="contentTpl"
-              [nzNotFoundFooter]="footerTpl"
-            >
-              <ng-template #contentTpl>
-                <span> Customize <a href="#API">Description</a> </span>
-              </ng-template>
-              <ng-template #footerTpl>
-                <button nz-button nzType="primary" (click)="onClick()">Create Now</button>
-              </ng-template>
-            </nz-empty>
-          </div>
-          <div class="divider-left" style="padding: 0px 10px ">
-            <nz-divider></nz-divider>
-            <span>Notifycation</span>
-            <nz-steps [nzCurrent]="0" nzDirection="vertical">
-              <nz-step nzTitle="Finished" nzDescription="This is a description."></nz-step>
-              <nz-step nzTitle="In Progress" nzDescription="This is a description."></nz-step>
-              <nz-step nzTitle="Waiting" nzDescription="This is a description."></nz-step>
-            </nz-steps>
-          </div>
-          <div class="divider-left" style="padding: 0px 10px ">
-            <nz-divider></nz-divider>
-            <span>Near Task</span>
-            <nz-timeline>
-              <nz-timeline-item nzColor="green">Các link là route </nz-timeline-item>
-              <nz-timeline-item nzColor="green">Solve initial network problems</nz-timeline-item>
-              <nz-timeline-item nzColor="red">
-                <p>các bài viết có link kèm uuid động</p>
-                <p>Bấm vô sẽ chuyển sang component</p>
-                <p>get data theo uuid động ở component</p>
-              </nz-timeline-item>
-              <nz-timeline-item>
-                <p>Technical testing 1</p>
-                <p>Technical testing 2</p>
-                <p>Technical testing 3 2015-09-01</p>
-              </nz-timeline-item>
-              <nz-timeline-item nzColor="gray">
-                <p>Technical testing 1</p>
-                <p>Technical testing 2</p>
-                <p>Technical testing 3 2015-09-01</p>
-              </nz-timeline-item>
-              <nz-timeline-item nzColor="gray">
-                <p>Technical testing 1</p>
-                <p>Technical testing 2</p>
-                <p>Technical testing 3 2015-09-01</p>
-              </nz-timeline-item>
-            </nz-timeline>
-          </div>
-
-        </div>
-      </div>
     </nz-content>
   </nz-layout>
 </nz-layout>
+
 <nz-modal
   [(nzVisible)]="isVisible"
   [nzContent]="modalContent"
   [nzFooter]="modalFooter"
   (nzOnCancel)="handleCancel()"
 >
-<!--  <ng-template #modalTitle>Custom Modal Title</ng-template>-->
+  <!--  <ng-template #modalTitle>Custom Modal Title</ng-template>-->
 
   <ng-template #modalContent>
     <p>Tạo nhóm mới</p>
@@ -247,7 +128,7 @@
     <input placeholder="Tên nhóm mới" type="text"/>
   </ng-template>
   <ng-template #modalFooter>
-<!--    <button nz-button nzType="default" (click)="handleCancel()">Custom Callback</button>-->
+    <!--    <button nz-button nzType="default" (click)="handleCancel()">Custom Callback</button>-->
     <button nz-button nzType="primary" (click)="handleOk()" >Thêm</button>
     <br>
   </ng-template>
