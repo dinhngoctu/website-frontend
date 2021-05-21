@@ -1,5 +1,6 @@
 package WS.BLG;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.support.AbstractBeanDefinitionReader;
 import org.springframework.beans.factory.support.PropertiesBeanDefinitionReader;
@@ -21,6 +22,7 @@ import javax.sql.DataSource;
 @RefreshScope
 @SpringBootApplication
 @RestController
+@Slf4j
 public class BlgApplication {
 
 	public static void main(String[] args) {
@@ -34,11 +36,19 @@ public class BlgApplication {
 	private ConfigurableApplicationContext appContext;
 	@GetMapping(value = "/test")
 	public ResponseEntity<String> getPropertiesValue() {
-		GenericApplicationContext context = new GenericApplicationContext();
-		appContext.refresh();
-		System.out.println(dataSource);
-        String value = env.getProperty("string.test.value");
-		return new ResponseEntity<>(value, HttpStatus.OK);
+		while (true) {
+			log.info("log lặp");
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+				return new ResponseEntity<>( HttpStatus.OK);
+			}
+		}
+//		GenericApplicationContext context = new GenericApplicationContext();
+//		appContext.refresh();
+//		System.out.println(dataSource);
+//        String value = env.getProperty("string.test.value");
 
 	}
 
