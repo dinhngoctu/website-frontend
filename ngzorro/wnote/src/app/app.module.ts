@@ -24,6 +24,7 @@ import {NzPopoverModule} from 'ng-zorro-antd/popover';
 import {NzModalModule} from 'ng-zorro-antd/modal';
 import {NzFormModule} from 'ng-zorro-antd/form';
 import { NewNoteComponent } from './component/new-note/new-note.component';
+import { TranslateComponent } from './component/new-note/translate/translate.component';
 
 registerLocaleData(en);
 
@@ -32,7 +33,8 @@ registerLocaleData(en);
   declarations: [
     AppComponent,
     QuillInputComponent,
-    NewNoteComponent
+    NewNoteComponent,
+    TranslateComponent
   ],
   imports: [
     BrowserModule,

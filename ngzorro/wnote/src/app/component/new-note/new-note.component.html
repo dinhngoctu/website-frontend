@@ -123,22 +123,4 @@
 
   </div>
 </div>
-<nz-modal
-  [(nzVisible)]="isVisible"
-  [nzContent]="modalContent"
-  [nzFooter]="modalFooter"
-  (nzOnCancel)="handleCancel()"
->
-  <!--  <ng-template #modalTitle>Custom Modal Title</ng-template>-->
-
-  <ng-template #modalContent>
-    <p>Tạo nhóm mới</p>
-    <br>
-    <input placeholder="Tên nhóm mới" type="text"/>
-  </ng-template>
-  <ng-template #modalFooter>
-    <!--    <button nz-button nzType="default" (click)="handleCancel()">Custom Callback</button>-->
-    <button nz-button nzType="primary" (click)="handleOk()">Thêm</button>
-    <br>
-  </ng-template>
-</nz-modal>
+<app-translate *ngIf="isVisible"></app-translate>
