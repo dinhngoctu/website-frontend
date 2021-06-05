@@ -1,7 +1,7 @@
 package WS.BLG.service.impl;
 
 import WS.BLG.entities.WordEntity;
-import WS.BLG.repository.DicRepository;
+import WS.BLG.repository.posgres.DicRepository;
 import WS.BLG.service.DicService;
 import WS.BLG.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ public class DicServiceImpl implements DicService {
     DicRepository dicRepository;
 
     @Override
-    public WordEntity translateByDB(String searchValue, String dict){
+    public WordEntity translateByDB(String searchValue, String dict) {
         Long currentUserId = 0l;
         Integer typeDict = Utils.HashMapValue.findDictType(dict);
         Optional<WordEntity> optional = dicRepository.findWordsBySearchValueAndTypeDicAndUserId(searchValue, typeDict, currentUserId);
@@ -39,14 +39,14 @@ public class DicServiceImpl implements DicService {
 
     public String translateWordApi(String value, String dic) {
         String url = "https://api.us-south.language-translator.watson.cloud.ibm.com/instances/06b07380-b972-4b05-8ae6-bf896b1dc539/v3/translate?version=2018-05-01";
-        String data = "{\"text\":[\""+value+"\"],\"model_id\":\""+dic+"\"}";
+        String data = "{\"text\":[\"" + value + "\"],\"model_id\":\"" + dic + "\"}";
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         restTemplate.getMessageConverters()
                 .add(0, new StringHttpMessageConverter(StandardCharsets.UTF_8));
         headers.add("Content-type", "application/json");
         headers.add("Authorization", "Basic YXBpa2V5Ok9CU29VTDFfMVdzaWMtVTBxRV9nU0tTdXVwQTZ0d2xHQ1FpUXNWVmNDOU5G");
-        HttpEntity<?> entity = new HttpEntity<>(data,headers);
+        HttpEntity<?> entity = new HttpEntity<>(data, headers);
         ResponseEntity res = restTemplate.postForEntity(url, entity, String.class);
         return res.getBody().toString();
     }

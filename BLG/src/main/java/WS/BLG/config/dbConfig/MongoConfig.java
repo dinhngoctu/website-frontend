@@ -1,4 +1,4 @@
-package WS.BLG.config;
+package WS.BLG.config.dbConfig;
 
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
@@ -18,6 +18,7 @@ public class MongoConfig extends AbstractMongoClientConfiguration {
     protected String getDatabaseName() {
         return "blg";
     }
+
     @Override
     public MongoClient mongoClient() {
         ConnectionString connectionString = new ConnectionString("mongodb://admin:admin@localhost:27017");
