@@ -2,6 +2,7 @@ package WS.BLG.service.impl;
 
 import WS.BLG.entities.WordEntity;
 import WS.BLG.repository.posgres.DicRepository;
+import WS.BLG.response.IBResponse;
 import WS.BLG.service.DicService;
 import WS.BLG.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,7 +49,7 @@ public class DicServiceImpl implements DicService {
         headers.add("Content-type", "application/json");
         headers.add("Authorization", "Basic YXBpa2V5Ok9CU29VTDFfMVdzaWMtVTBxRV9nU0tTdXVwQTZ0d2xHQ1FpUXNWVmNDOU5G");
         HttpEntity<?> entity = new HttpEntity<>(data, headers);
-        ResponseEntity res = restTemplate.postForEntity(url, entity, String.class);
+        ResponseEntity res = restTemplate.postForEntity(url, entity, IBResponse.class);
         return res.getBody().toString();
     }
 }
