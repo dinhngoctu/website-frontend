@@ -1,7 +1,8 @@
-<nz-modal>
+<nz-modal
   [nzContent]="modalContent"
   [nzFooter]="modalFooter"
-  (nzOnCancel)="handleCancel()"
+  [(nzVisible)]="isVisible"
+  [nzFooter]="modalFooter"
 >
   <!--  <ng-template #modalTitle>Custom Modal Title</ng-template>-->
 
@@ -13,6 +14,7 @@
   <ng-template #modalFooter>
     <!--    <button nz-button nzType="default" (click)="handleCancel()">Custom Callback</button>-->
     <button nz-button nzType="primary" (click)="handleOk()">Thêm</button>
+    <button nz-button nzType="primary" (click)="handleCancel()">Thoat</button>
     <br>
   </ng-template>
 </nz-modal>

@@ -2,10 +2,10 @@
   <div id="content_center" class="col-9">
     <div class="inner-content">
       <div nz-row class="row-header" style="height: 60px;display: flex">
-              <span class="header-trigger" (click)="showModal()">
+              <span class="header-trigger" (click)="showModal($event)">
                 <i class="trigger" nz-icon [nzType]="'field-time'"></i>
               </span>
-        <span class="header-trigger" (click)="showModal()">
+        <span class="header-trigger" (click)="showModal($event)">
                 <i class="trigger" nz-icon [nzType]="'read'"></i>
               </span>
         <span class="header-trigger" (click)="switch3medthod()">
@@ -15,8 +15,8 @@
       <div nz-row class="row-input-center">
         <!--          <div nz-col [nzSpan]="18" class="ccard-shadow input-content-center"></div>-->
         <div nz-col [nzSpan]="19" class="input-content-center" style="background: white;">
-          <div style="max-width: 30%; margin: 30px 0px -20px 15px;">          <nz-divider style="font-style: italic;color: gray" nzText="Left Text" nzOrientation="left"></nz-divider>
-          </div>
+<!--          <div style="max-width: 30%; margin: 30px 0px -20px 15px;">          <nz-divider style="font-style: italic;color: gray" nzText="Left Text" nzOrientation="left"></nz-divider>-->
+<!--          </div>-->
           <!--                khung nhap du lieu text-->
           <app-quill-input></app-quill-input>
 
@@ -123,4 +123,7 @@
 
   </div>
 </div>
-<app-translate *ngIf="isVisible"></app-translate>
+<app-translate [isVisible]="isVisible"
+               (closeModal)="showModal($event)"
+               *ngIf="isVisible"></app-translate>
+<!--(refresh)="doSeach($event)"-->

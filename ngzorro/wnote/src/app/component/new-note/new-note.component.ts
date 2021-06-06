@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NzButtonSize} from 'ng-zorro-antd/button';
+import {NzModalService} from 'ng-zorro-antd/modal';
+import {TranslateComponent} from './translate/translate.component';
 
 @Component({
   selector: 'app-new-note',
@@ -8,7 +10,7 @@ import {NzButtonSize} from 'ng-zorro-antd/button';
 })
 export class NewNoteComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalService: NzModalService) { }
   isCollapsed = true;
   isCollapsed2 = true;
   switch3 = false;
@@ -17,6 +19,7 @@ export class NewNoteComponent implements OnInit {
   size: NzButtonSize = 'small';
 
   isVisible = false;
+  // tslint:disable-next-line:use-lifecycle-interface
   ngOnDestroy(): void {
   }
   ngOnInit(): void {
@@ -32,8 +35,8 @@ export class NewNoteComponent implements OnInit {
       document.getElementById('extent-info-nav').className = '3col-3 ccard-shadow extent-info-nav';
     }
   }
-  showModal(): void {
-    this.isVisible = true;
+  showModal($event): void {
+    this.isVisible = !this.isVisible;
   }
 
 }
