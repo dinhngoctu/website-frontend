@@ -1,32 +1,33 @@
-import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {AppConsts} from '../app-constant';
+import {Injectable} from '@angular/core';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class BaseService {
-
+  baseUrl = 'http://192.168.1.7:6001';
+  protected configService = new AppConsts();
   constructor(
-    public httpClient: HttpClient,
-    protected configService: AppConsts
-  ) {
+    public httpClient: HttpClient) {
   }
   get(url: string, params?: {}, responseType?: string): Observable<any> {
     switch (responseType) {
       case 'text':
-        return this.httpClient.get(this.configService.baseUrl + url, {
+        return this.httpClient.get(this.baseUrl + url, {
           headers: this.createHeaders().set('skipLoading', 'true') || {},
           params,
           responseType: 'text',
         });
       case 'blob':
-        return this.httpClient.get(this.configService.baseUrl + url, {
+        return this.httpClient.get(this.baseUrl + url, {
           headers: this.createHeaders().set('skipLoading', 'true') || {},
           params,
           responseType: 'blob',
         });
       default:
-        return this.httpClient.get(this.configService.baseUrl + url, {
+        return this.httpClient.get(this.baseUrl + url, {
           headers: this.createHeaders().set('skipLoading', 'true') || {},
           params
         });
@@ -35,25 +36,25 @@ export class BaseService {
   async getWithAsync(url: string, params?: {}, responseType?: string) {
     switch (responseType) {
       case 'text':
-        return await this.httpClient.get(this.configService.baseUrl + url, {
+        return await this.httpClient.get(this.baseUrl + url, {
           headers: this.createHeaders().set('skipLoading', 'true') || {},
           params,
           responseType: 'text',
         }).toPromise();
       case 'blob':
-        return await this.httpClient.get(this.configService.baseUrl + url, {
+        return await this.httpClient.get(this.baseUrl + url, {
           headers: this.createHeaders().set('skipLoading', 'true') || {},
           params,
           responseType: 'blob',
         }).toPromise();
       case 'arraybuffer':
-        return await this.httpClient.post(this.configService.baseUrl + url, {
+        return await this.httpClient.post(this.baseUrl + url, {
           headers: this.createHeaders() || {},
           responseType: 'arraybuffer',
           params
         }).toPromise();
       default:
-        return await this.httpClient.get(this.configService.baseUrl + url, {
+        return await this.httpClient.get(this.baseUrl + url, {
           headers: this.createHeaders().set('skipLoading', 'true') || {},
           params
         }).toPromise();
@@ -67,19 +68,19 @@ export class BaseService {
   post(url: string, data: any, params?: {}, responseType?: string): Observable<any> {
     switch (responseType) {
       case 'text':
-        return this.httpClient.post(this.configService.baseUrl + url, data, {
+        return this.httpClient.post(this.baseUrl + url, data, {
           headers: this.createHeaders().set('skipLoading', 'true') || {},
           responseType: 'text',
           params
         });
       case 'blob':
-        return this.httpClient.post(this.configService.baseUrl + url, data, {
+        return this.httpClient.post(this.baseUrl + url, data, {
           headers: this.createHeaders().set('skipLoading', 'true') || {},
           responseType: 'blob',
           params
         });
       default:
-        return this.httpClient.post(this.configService.baseUrl + url, data, {
+        return this.httpClient.post(this.baseUrl + url, data, {
           headers: this.createHeaders().set('skipLoading', 'true') || {},
           params
         });
@@ -94,12 +95,12 @@ export class BaseService {
   put(url: string, data: any, responseType?: string): Observable<any> {
     switch (responseType) {
       case 'text':
-        return this.httpClient.put(this.configService.baseUrl + url, data, {
+        return this.httpClient.put(this.baseUrl + url, data, {
           headers: this.createHeaders() || {},
           responseType: 'text'
         });
       default:
-        return this.httpClient.put(this.configService.baseUrl + url, data, {
+        return this.httpClient.put(this.baseUrl + url, data, {
           headers: this.createHeaders() || {},
         });
     }
@@ -113,12 +114,12 @@ export class BaseService {
   delete(url: string, id: any, responseType?: string): Observable<any> {
     switch (responseType) {
       case 'text':
-        return this.httpClient.delete(this.configService.baseUrl + url, {
+        return this.httpClient.delete(this.baseUrl + url, {
           headers: this.createHeaders() || {},
           responseType: 'text'
         });
       default:
-        return this.httpClient.delete(this.configService.baseUrl + url, {
+        return this.httpClient.delete(this.baseUrl + url, {
           headers: this.createHeaders() || {},
         });
     }

@@ -25,6 +25,7 @@ import {NzModalModule} from 'ng-zorro-antd/modal';
 import {NzFormModule} from 'ng-zorro-antd/form';
 import { NewNoteComponent } from './component/new-note/new-note.component';
 import { TranslateComponent } from './component/new-note/translate/translate.component';
+import {NzTableModule} from 'ng-zorro-antd/table';
 
 registerLocaleData(en);
 
@@ -46,6 +47,7 @@ registerLocaleData(en);
     NzLayoutModule,
     NzI18nModule,
     NzModalModule,
+    NzTableModule,
     NzFormModule,
     NzEmptyModule,
     NzGridModule,
@@ -54,6 +56,7 @@ registerLocaleData(en);
     NzTimelineModule,
     NzStepsModule,
     NzPopoverModule,
+    HttpClientModule,
     QuillModule
       .forRoot({
         theme: 'bubble',

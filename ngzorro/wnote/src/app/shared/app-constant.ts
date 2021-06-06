@@ -7,5 +7,5 @@ export class AppConsts {
   };
   static page: { basePage: number };
   static defaultPage: { defaultBasePage: number };
-  baseUrl = 'http://localhost:6001';
+  baseUrl = 'http://192.168.1.7:6001';
 }
