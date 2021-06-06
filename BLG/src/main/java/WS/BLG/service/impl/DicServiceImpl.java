@@ -33,7 +33,8 @@ public class DicServiceImpl implements DicService {
             wordEntity.setTypeDic(typeDict);
             wordEntity.setSearchValue(searchValue);
             wordEntity.setValue(translateWordApi(searchValue, dict));
-            return dicRepository.save(wordEntity);
+            WordEntity result = dicRepository.save(wordEntity);
+            return result;
         }
     }
 

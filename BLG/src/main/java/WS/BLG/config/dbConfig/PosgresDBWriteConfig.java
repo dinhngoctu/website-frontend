@@ -4,7 +4,6 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -19,7 +18,7 @@ import java.util.HashMap;
 import java.util.Properties;
 
 @Configuration
-@ConfigurationProperties("spring.datasource-write")//dung cho master con read dung cho replicas
+//@ConfigurationProperties("spring.datasource-write")//dung cho master con read dung cho replicas
 @EnableJpaRepositories(basePackages = "WS.BLG.repository.posgres",
         entityManagerFactoryRef = "postgresEntityManager",
         transactionManagerRef = "postgreTransactionManager")
@@ -32,21 +31,34 @@ public class PosgresDBWriteConfig extends HikariConfig {
 //        co the cau hinh hikari config trong code
         Properties props = new Properties();
 
-        props.setProperty("dataSourceClassName", "org.postgresql.ds.PGSimpleDataSource");
-        props.setProperty("dataSource.user", "test");
-        props.setProperty("dataSource.password", "test");
-        props.setProperty("dataSource.databaseName", "mydb");
-        props.setProperty("datasource.url", "jdbc:postgresql://localhost:5432/somedb");
+//        props.setProperty("dataSourceClassName", "org.postgresql.ds.PGSimpleDataSource");
+        props.setProperty("dataSource.user", "postgres");
+        props.setProperty("dataSource.password", "changeme");
+        props.setProperty("dataSource.databaseName", "blg");
+//        props.setProperty("datasource.url", "jdbc:postgresql://localhost:5432/blg");
 //        props.put("dataSource.logWriter", new PrintWriter(System.out));
         HikariConfig config = new HikariConfig(props);
-//        config.setJdbcUrl("jdbc_url");
+        config.setJdbcUrl("jdbc:postgresql://0.0.0.0:5432/blg");
+        config.setDriverClassName("org.postgresql.Driver");
+        config.setPoolName("AuthMePostgreSQLPool");
+
+        // Pool Settings
+        config.setMaximumPoolSize(10);
+        config.setMaxLifetime(36 * 1000);
+        // Random stuff
+        config.addDataSourceProperty("reWriteBatchedInserts", "true");
+
+        // Caching
+        config.addDataSourceProperty("cachePrepStmts", "true");
+        config.addDataSourceProperty("preparedStatementCacheQueries", "275");
+
 //        config.setUsername("database_username");
 //        config.setPassword("database_password");
         config.addDataSourceProperty("cachePrepStmts", "true");
         config.addDataSourceProperty("prepStmtCacheSize", "250");
         config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
+        //        return new HikariDataSource(this);
         return new HikariDataSource(config);
-//        return new HikariDataSource(this);
     }
 
     @Bean(name = "postgresEntityManager")
@@ -67,9 +79,11 @@ public class PosgresDBWriteConfig extends HikariConfig {
 
         // JPA & Hibernate
         //properties.put("hibernate.dialect", env.getProperty("spring.jpa.properties.hibernate.dialect.vnptpaybss"));
-        properties.put("hibernate.ddl-auto", environment.getProperty("spring.jpa.hibernate.ddl-auto.BLG"));
-        properties.put("hibernate.show-sql", environment.getProperty("spring.jpa.show-sql.BLG"));
-        properties.put("hibernate.enable_lazy_load_no_trans", environment.getProperty("spring.jpa.enable_lazy_load_no_trans.BLG"));
+//        properties.put("hibernate.ddl-auto", environment.getProperty("spring.jpa.hibernate.ddl-auto.BLG"));
+        properties.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQL95Dialect");
+        properties.put("hibernate.hbm2ddl.auto", "update");
+        properties.put("hibernate.show-sql", true);
+//        properties.put("hibernate.enable_lazy_load_no_trans", environment.getProperty("spring.jpa.enable_lazy_load_no_trans.BLG"));
 
         // Solved Error: PostGres createClob() is not yet implemented.
         // PostGres Only:

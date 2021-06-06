@@ -1,29 +1,31 @@
 package WS.BLG.controller;
 
-import WS.BLG.entities.BLGModel;
+//import WS.BLG.entities.BLGModel;
 //import WS.BLG.repository.MongoCRepo;
+
 import WS.BLG.service.FluxService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 
 import java.util.concurrent.atomic.AtomicReference;
 
 @RestController
+@RequestMapping("/test")
 public class TestController {
     @Autowired
     FluxService fluxService;
-//    @Autowired
+
+    //    @Autowired
 //    MongoCRepo mongoCRepo;
-    @Autowired
 
     @GetMapping("/test-flux")
     public String getNew() {
         AtomicReference<String> str = new AtomicReference<>("");
         Flux<String> result = fluxService.getMessage();
-        result.subscribe(e ->{
+        result.subscribe(e -> {
             str.set(e);
         });
         return str.get();
