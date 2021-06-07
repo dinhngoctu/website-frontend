@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  postgres:
+    container_name: postgresdb
+    image: "postgres:latest"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=changeme
+      - PGDATA=/data/postgres
+      - POSTGRES_DB=blg
+    volumes:
+      - ./postgres:/data/postgres
+    ports:
+      - 5432:5432
+volumes:
+ postgres:
+  driver: local

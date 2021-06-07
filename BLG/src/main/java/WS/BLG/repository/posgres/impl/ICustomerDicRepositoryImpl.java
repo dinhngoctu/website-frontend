@@ -1,4 +1,4 @@
-package WS.BLG.repository.impl;
+package WS.BLG.repository.posgres.impl;
 
 public class ICustomerDicRepositoryImpl {
 }

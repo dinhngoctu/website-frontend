@@ -25,18 +25,4 @@ public class FluxService {
         return Flux.generate((SynchronousSink<String> synk) -> synk.next(one_note +num_status.incrementAndGet())).delayElements(Duration.ofSeconds(2));
     }
 
-    public String translateWordApi(String value, String dic) {
-        String url = "https://api.us-south.language-translator.watson.cloud.ibm.com/instances/06b07380-b972-4b05-8ae6-bf896b1dc539/v3/translate?version=2018-05-01";
-        String data = "{\"text\":[\""+value+"\"],\"model_id\":\""+dic+"\"}";
-        RestTemplate restTemplate = new RestTemplate();
-        HttpHeaders headers = new HttpHeaders();
-        restTemplate.getMessageConverters()
-                .add(0, new StringHttpMessageConverter(StandardCharsets.UTF_8));
-        headers.add("Content-type", "application/json");
-        headers.add("Authorization", "Basic YXBpa2V5Ok9CU29VTDFfMVdzaWMtVTBxRV9nU0tTdXVwQTZ0d2xHQ1FpUXNWVmNDOU5G");
-        HttpEntity<?> entity = new HttpEntity<>(data,headers);
-        ResponseEntity res = restTemplate.postForEntity(url, entity, String.class);
-        return res.getBody().toString();
-    }
-
 }
