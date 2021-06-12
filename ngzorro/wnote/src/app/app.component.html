@@ -1,5 +1,5 @@
 <nz-layout class="app-layout">
-  <nz-sider class="menu-sidebar"
+  <nz-sider *ngIf="!isCollapsed2" class="menu-sidebar"
             nzCollapsible
             nzWidth="256px"
             [(nzCollapsed)]="isCollapsed"
@@ -53,9 +53,17 @@
     </div>
     <ul nz-menu  ng-reflect-nz-disabled="true" ng-reflect-is-menu-inside-drop-down="true"  nzTheme="dark" nzMode="inline" style="background-color: #161F2D;" [nzInlineCollapsed]="isCollapsed2">
 <!--    <ul nz-menu nzTheme="light" nzMode="inline" [nzInlineCollapsed]="isCollapsed2">-->
+      <li  nz-menu-item nzMatchRouter >
+        <i nz-icon [nzType]="'plus'"></i>
+        <a routerLink="/list-note">Danh sách tìm kiếm(filter)</a>
+      </li>
       <li nz-menu-item nzMatchRouter >
         <i nz-icon [nzType]="'plus'"></i>
-        <a routerLink="/new-note">Home</a>
+        <a routerLink="/list-note">Danh sách ghi chú</a>
+      </li>
+      <li nz-menu-item nzMatchRouter >
+        <i nz-icon [nzType]="'plus'"></i>
+        <a routerLink="/new-note">Thêm ghi chú</a>
       </li>
       <li nz-submenu nzOpen nzTitle="Top Note (rank)" nzIcon="dashboard">
         <ul>
@@ -79,7 +87,7 @@
       </li>
       <li nz-menu-item nzMatchRouter >
         <i nz-icon [nzType]="'plus'"></i>
-        <a routerLink="/all-note">All Note</a>
+        <a routerLink="/all-note">Quản lý tự động chạy</a>
       </li>
       <div style="display:flex;justify-content: center">
         <span class="header-trigger" (click)="showModal()">

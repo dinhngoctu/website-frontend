@@ -26,6 +26,7 @@ import {NzFormModule} from 'ng-zorro-antd/form';
 import { NewNoteComponent } from './component/new-note/new-note.component';
 import { TranslateComponent } from './component/new-note/translate/translate.component';
 import {NzTableModule} from 'ng-zorro-antd/table';
+import { ListNoteComponent } from './component/list-note/list-note.component';
 
 registerLocaleData(en);
 
@@ -35,7 +36,8 @@ registerLocaleData(en);
     AppComponent,
     QuillInputComponent,
     NewNoteComponent,
-    TranslateComponent
+    TranslateComponent,
+    ListNoteComponent
   ],
   imports: [
     BrowserModule,

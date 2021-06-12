@@ -1,0 +1,173 @@
+<div nz-row class="full-height fex-content-between">
+  <div id="content_center" class="col-9">
+    <div class="inner-content">
+      <div nz-row class="row-header" style="height: 60px;display: flex">
+              <span class="header-trigger" (click)="showModal($event)">
+                <i class="trigger" nz-icon [nzType]="'field-time'"></i>
+              </span>
+        <span class="header-trigger" (click)="showModal($event)">
+                <i class="trigger" nz-icon [nzType]="'read'"></i>
+              </span>
+        <span class="header-trigger" (click)="switch3medthod()">
+                <i class="trigger" nz-icon [nzType]="switch3 ? 'menu-unfold' : 'menu-fold'"></i>
+              </span>
+      </div>
+      <div nz-row class="row-input-center">
+        <!--          <div nz-col [nzSpan]="18" class="ccard-shadow input-content-center"></div>-->
+        <div nz-col [nzSpan]="19" class="input-content-center" style="background: white;">
+          <!--          <div style="max-width: 30%; margin: 30px 0px -20px 15px;">          <nz-divider style="font-style: italic;color: gray" nzText="Left Text" nzOrientation="left"></nz-divider>-->
+          <!--          </div>-->
+          <!--                khung nhap du lieu text-->
+          <app-quill-input></app-quill-input>
+
+
+          <!--                <div id="editorjs"></div>-->
+          <!--               end khung nhap du lieu text-->
+
+        </div>
+        <div  nz-col [nzSpan]="19" class="input-content-center" style="padding-top: 30px;font-style: normal">
+          <div class="container">
+            <div class="col-md-12">
+              <h1>Alice in Wonderland, part dos</h1>
+              <p>'You ought to be ashamed of yourself for asking such a simple question,' added the Gryphon; and then they both sat silent and looked at poor Alice, who felt ready to sink into the earth. At last the Gryphon said to the Mock Turtle, 'Drive on, old fellow! Don't be all day about it!' and he went on in these words:
+                'Yes, we went to school in the sea, though you mayn't believe it—'
+                'I never said I didn't!' interrupted Alice.
+                'You did,' said the Mock Turtle.</p>
+              <div nz-row style="justify-content: space-between">
+                <span class="badge">Posted 2012-08-02 20:47:04</span><div class="pull-right"><span class="chip warning">Warning</span>
+                <span class="chip danger">Danger</span></div>
+              </div>
+              <hr>
+              <h1>Revolution has begun!</h1>
+              <p>'I am bound to Tahiti for more men.'
+                'Very good. Let me board you a moment—I come in peace.' With that he leaped from the canoe, swam to the boat; and climbing the gunwale, stood face to face with the captain.
+                'Cross your arms, sir; throw back your head. Now, repeat after me. As soon as Steelkilt leaves me, I swear to beach this boat on yonder island, and remain there six days. If I do not, may lightning strike me!'A pretty scholar,' laughed the Lakeman. 'Adios, Senor!' and leaping into the sea, he swam back to his comrades.</p>
+              <div nz-row style="justify-content: space-between">
+                <span class="badge">Posted 2012-08-02 20:47:04</span><div class="pull-right"><span class="chip warning">Warning</span>
+                <span class="chip danger">Danger</span></div>
+              </div>
+              <hr>
+            </div>
+          </div>
+          <nz-list nzItemLayout="vertical">
+            <nz-list-item *ngFor="let item of data">
+              <nz-list-item-meta>
+                <nz-list-item-meta-avatar [nzSrc]="item.avatar"> </nz-list-item-meta-avatar>
+                <nz-list-item-meta-title>
+                  <a href="{{ item.href }}">{{ item.title }}</a>
+                </nz-list-item-meta-title>
+                <nz-list-item-meta-description>
+                  {{ item.description }}
+                </nz-list-item-meta-description>
+              </nz-list-item-meta>
+              {{ item.content }}
+              <ul nz-list-item-actions>
+                <nz-list-item-action><i nz-icon nzType="star-o" style="margin-right: 8px;"></i> 156</nz-list-item-action>
+                <nz-list-item-action><i nz-icon nzType="star-o" style="margin-right: 8px;"></i> 156</nz-list-item-action>
+                <nz-list-item-action><i nz-icon nzType="star-o" style="margin-right: 8px;"></i> 2</nz-list-item-action>
+              </ul>
+              <nz-list-item-extra>
+                <img width="272" alt="logo" src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png" />
+              </nz-list-item-extra>
+            </nz-list-item>
+          </nz-list>
+        </div>
+      </div>
+      <div nz-row class="row-input-center" style="margin-top: 50px;">
+        <!--          <div nz-col [nzSpan]="18" class="ccard-shadow input-content-center"></div>-->
+        <div nz-col [nzSpan]="19" class="input-content-center" style="padding: 15px">
+          <!--              <div nz-col [nzSpan]="19" class="input-content-center" style="background: white;padding: 15px">-->
+          <div class="col-5"
+               style="border-right: 1px solid lightgray;height: 180px;overflow: auto;padding-right: 10px;">
+            <span>Near Task</span>
+            <p></p>
+            <nz-timeline>
+              <nz-timeline-item nzColor="green">Các link là route</nz-timeline-item>
+              <nz-timeline-item nzColor="green">Solve initial network problems</nz-timeline-item>
+              <nz-timeline-item nzColor="red">
+                <p>các bài viết có link kèm uuid động</p>
+                <p>Bấm vô sẽ chuyển sang component</p>
+                <p>get data theo uuid động ở component</p>
+              </nz-timeline-item>
+              <nz-timeline-item>
+                <p>Technical testing 1</p>
+              </nz-timeline-item>
+            </nz-timeline>
+          </div>
+          <div class="col-7" style="height: 180px"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="extent-info-nav" *ngIf="!switch3" class="col-3 ccard-shadow extent-info-nav">
+    <div nz-row style="padding: 20px" class="timer-widget">
+      <div nz-row style="display: block">
+        <span style="font-size: 20px">11/05/2021</span>
+      </div>
+      <div nz-row>
+        <span>04:33 PM</span>
+      </div>
+      <div nz-row>
+        <span>Thứ Hai</span>
+      </div>
+    </div>
+    <div class="divider-left" style="padding: 0px 10px ">
+      <nz-divider></nz-divider>
+      <span>Đặt lịch</span>
+      <nz-empty
+        nzNotFoundImage="https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg"
+        [nzNotFoundContent]="contentTpl"
+        [nzNotFoundFooter]="footerTpl"
+      >
+        <ng-template #contentTpl>
+          <span> Customize <a href="#API">Description</a> </span>
+        </ng-template>
+        <ng-template #footerTpl>
+          <button nz-button nzType="primary" (click)="onClick()">Create Now</button>
+        </ng-template>
+      </nz-empty>
+    </div>
+    <div class="divider-left" style="padding: 0px 10px ">
+      <nz-divider></nz-divider>
+      <span>Notifycation</span>
+      <nz-steps [nzCurrent]="0" nzDirection="vertical">
+        <nz-step nzTitle="Finished" nzDescription="This is a description."></nz-step>
+        <nz-step nzTitle="In Progress" nzDescription="This is a description."></nz-step>
+        <nz-step nzTitle="Waiting" nzDescription="This is a description."></nz-step>
+      </nz-steps>
+    </div>
+    <div class="divider-left" style="padding: 0px 10px ">
+      <nz-divider></nz-divider>
+      <span>Near Task</span>
+      <nz-timeline>
+        <nz-timeline-item nzColor="green">Các link là route</nz-timeline-item>
+        <nz-timeline-item nzColor="green">Solve initial network problems</nz-timeline-item>
+        <nz-timeline-item nzColor="red">
+          <p>các bài viết có link kèm uuid động</p>
+          <p>Bấm vô sẽ chuyển sang component</p>
+          <p>get data theo uuid động ở component</p>
+        </nz-timeline-item>
+        <nz-timeline-item>
+          <p>Technical testing 1</p>
+          <p>Technical testing 2</p>
+          <p>Technical testing 3 2015-09-01</p>
+        </nz-timeline-item>
+        <nz-timeline-item nzColor="gray">
+          <p>Technical testing 1</p>
+          <p>Technical testing 2</p>
+          <p>Technical testing 3 2015-09-01</p>
+        </nz-timeline-item>
+        <nz-timeline-item nzColor="gray">
+          <p>Technical testing 1</p>
+          <p>Technical testing 2</p>
+          <p>Technical testing 3 2015-09-01</p>
+        </nz-timeline-item>
+      </nz-timeline>
+    </div>
+
+  </div>
+</div>
+<app-translate [isVisible]="isVisible"
+               (closeModal)="showModal($event)"
+               *ngIf="isVisible"></app-translate>
+<!--(refresh)="doSeach($event)"-->

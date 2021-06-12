@@ -3,6 +3,7 @@
   [nzFooter]="modalFooter"
   [(nzVisible)]="isVisible"
   [nzFooter]="modalFooter"
+  nzClosable="false"
 >
   <!--  <ng-template #modalTitle>Custom Modal Title</ng-template>-->
 
@@ -11,25 +12,26 @@
     <br>
     <input placeholder="nhập từ cần dịch" id="inputTrans" type="text"/>
     <button nz-button nzType="primary" (click)="translate()">Dịch</button>
+<!--    ng if nếu tìm kiếm ra kết quả sẽ hiện ra -->
     <input placeholder="" [value]='responseWord' type="text"/>
-    <nz-table #sortTable [nzData]="listOfData" nzTableLayout="fixed">
-      <thead>
-      <tr>
-        <th class="text-nowrap" nzWidth="15px" >STT</th>
-        <th class="text-nowrap" >{{'Tên ứng dụng'}}</th>
-        <th class="text-nowrap" >{{'Mô tả'}}</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let data of sortTable.data; let i = index;">
-<!--        <td class="text-nowrap" nzWidth="15px">{{getRowIndex( i, formSearch.get('page').value,formSearch.get('pageSize').value)}}</td>-->
-        <td class="text-nowrap" nzWidth="15px">{{i}}</td>
-        <td>{{ data.searchValue }}</td>
-        <td>{{ data.value }}</td>
-<!--        <td>{{ getValue(data.value) }}</td>-->
-      </tr>
-      </tbody>
-    </nz-table>
+<!--    <nz-table #sortTable [nzData]="listOfData" nzTableLayout="fixed">-->
+<!--      <thead>-->
+<!--      <tr>-->
+<!--        <th class="text-nowrap" nzWidth="15px" >STT</th>-->
+<!--        <th class="text-nowrap" >{{'Tên ứng dụng'}}</th>-->
+<!--        <th class="text-nowrap" >{{'Mô tả'}}</th>-->
+<!--      </tr>-->
+<!--      </thead>-->
+<!--      <tbody>-->
+<!--      <tr *ngFor="let data of sortTable.data; let i = index;">-->
+<!--&lt;!&ndash;        <td class="text-nowrap" nzWidth="15px">{{getRowIndex( i, formSearch.get('page').value,formSearch.get('pageSize').value)}}</td>&ndash;&gt;-->
+<!--        <td class="text-nowrap" nzWidth="15px">{{i}}</td>-->
+<!--        <td>{{ data.searchValue }}</td>-->
+<!--        <td>{{ data.value }}</td>-->
+<!--&lt;!&ndash;        <td>{{ getValue(data.value) }}</td>&ndash;&gt;-->
+<!--      </tr>-->
+<!--      </tbody>-->
+<!--    </nz-table>-->
   </ng-template>
   <ng-template #modalFooter>
     <!--    <button nz-button nzType="default" (click)="handleCancel()">Custom Callback</button>-->

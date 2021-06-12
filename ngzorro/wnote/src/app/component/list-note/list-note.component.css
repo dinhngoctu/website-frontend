@@ -1,0 +1,48 @@
+.badge{
+  border-radius: 30px;
+  justify-content: center;
+  /*display: flex;*/
+  align-items: center;
+  padding: 4px 5px;
+  /*border-radius: 10px;*/
+  font-weight: 600;
+  font-size: 11px;
+  /*box-shadow: 0 2px 5px rgba(0,0,0,.25);*/
+  margin: 0 10px;
+  /*cursor: pointer;*/
+  background: #2F4058;
+  color: whitesmoke;
+}
+.chip{
+  padding: 3px 4px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 11px;
+  /*box-shadow: 0 2px 5px rgba(0,0,0,.25);*/
+  margin: 0 2px;
+
+  cursor: pointer;
+}
+.primary{
+  background: #2F4058;
+  color: whitesmoke;
+}
+
+.secondary{
+  background: #242933;
+  color: #777;
+}
+
+.warning{
+  background:#FEB904;
+  color: whitesmoke;
+}
+.danger{
+  background: #DA605B;
+  color: whitesmoke;
+}
+
+.info{
+  background: #5FD6D4;
+  color: whitesmoke;
+}
