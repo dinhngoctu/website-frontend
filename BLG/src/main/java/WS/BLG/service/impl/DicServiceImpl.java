@@ -33,13 +33,21 @@ public class DicServiceImpl implements DicService {
             wordEntity.setUserId(currentUserId);
             wordEntity.setTypeDic(typeDict);
             wordEntity.setSearchValue(searchValue);
-            wordEntity.setValue(translateWordApi(searchValue, dict));
+            IBResponse response = translateWordApi(searchValue, dict);
+            if (response == null) {
+                return null;
+            }
+            StringBuilder str = new StringBuilder();
+            response.getTranslations().stream().forEach(e ->{
+                str.append(e.getTranslation());
+            });
+            wordEntity.setValue(str.toString());
             WordEntity result = dicRepository.save(wordEntity);
             return result;
         }
     }
 
-    public String translateWordApi(String value, String dic) {
+    public IBResponse translateWordApi(String value, String dic) {
         String url = "https://api.us-south.language-translator.watson.cloud.ibm.com/instances/06b07380-b972-4b05-8ae6-bf896b1dc539/v3/translate?version=2018-05-01";
         String data = "{\"text\":[\"" + value + "\"],\"model_id\":\"" + dic + "\"}";
         RestTemplate restTemplate = new RestTemplate();
@@ -49,7 +57,13 @@ public class DicServiceImpl implements DicService {
         headers.add("Content-type", "application/json");
         headers.add("Authorization", "Basic YXBpa2V5Ok9CU29VTDFfMVdzaWMtVTBxRV9nU0tTdXVwQTZ0d2xHQ1FpUXNWVmNDOU5G");
         HttpEntity<?> entity = new HttpEntity<>(data, headers);
-        ResponseEntity res = restTemplate.postForEntity(url, entity, IBResponse.class);
-        return res.getBody().toString();
+        try {
+            ResponseEntity res = restTemplate.postForEntity(url, entity, IBResponse.class);
+            return (IBResponse) res.getBody();
+        }
+        catch (Exception e) {
+            System.out.printf(e.getMessage());
+            return null;
+        }
     }
 }

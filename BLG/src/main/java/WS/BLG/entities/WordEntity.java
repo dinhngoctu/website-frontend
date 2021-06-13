@@ -25,4 +25,6 @@ public class WordEntity {
     Integer typeDic;//hashmap
     @Column(name = "id_user")
     Long userId = 0l;
+    @Column(name = "career")
+    Long career;
 }

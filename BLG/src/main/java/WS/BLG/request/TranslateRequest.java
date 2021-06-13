@@ -8,4 +8,5 @@ import lombok.NoArgsConstructor;
 public class TranslateRequest extends BaseRequest {
     String searchValue;
     String dict;
+    String career;
 }
